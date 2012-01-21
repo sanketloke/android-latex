@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:focusable="true"
+	android:focusableInTouchMode="true">
+	
+        <com.inmobi.androidsdk.IMAdView
+        android:id="@+principal/adview"
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        adSlot="11"
+        appId="4028cb1334ef46a90134ffb035ec01f9" />
+	<LinearLayout android:layout_height="0dp"
+		android:layout_width="fill_parent" android:layout_weight="3"
+		android:orientation="horizontal">
+		<LinearLayout android:layout_margin="15dp"
+			android:layout_width="0dp" android:layout_height="fill_parent"
+			android:layout_weight="1" android:orientation="vertical">
+			<TextView android:text="@string/projectlist"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:textSize="30dp" android:background="@drawable/login_sub" />
+
+			<LinearLayout android:orientation="horizontal"
+				android:padding="15dp" android:layout_height="fill_parent"
+				android:layout_width="fill_parent" android:background="@drawable/login_down">
+				<ListView android:id="@+projectlist/list"
+					android:layout_width="fill_parent" android:layout_height="fill_parent">
+				</ListView>
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout android:layout_margin="15dp"
+			android:layout_width="0dp" android:layout_height="fill_parent"
+			android:layout_weight="1" android:orientation="vertical">
+			<LinearLayout android:layout_weight="2"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:orientation="vertical">
+				<TextView android:text="@string/projectcreate"
+					android:layout_height="wrap_content" android:layout_width="fill_parent"
+					android:textSize="30dp" android:background="@drawable/login_sub" />
+
+				<LinearLayout android:orientation="horizontal"
+					android:padding="15dp" android:layout_height="wrap_content"
+					android:layout_width="fill_parent" android:background="@drawable/login_down">
+					<LinearLayout android:orientation="vertical"
+						android:layout_weight="1" android:layout_width="0dp"
+						android:layout_height="fill_parent">
+						<TextView android:text="@string/projectname" android:layout_height="0dp"
+							android:layout_width="fill_parent" android:layout_weight="1"
+							android:gravity="center_vertical" />
+						<TextView android:text=" " android:layout_height="0dp"
+							android:layout_width="fill_parent" android:layout_weight="1"
+							android:gravity="center_vertical" />
+					</LinearLayout>
+					<LinearLayout android:orientation="vertical"
+						android:layout_weight="1" android:layout_width="0dp"
+						android:layout_height="fill_parent">
+						<EditText android:id="@+projectlist/add"
+							android:layout_height="0dp" android:layout_width="fill_parent"
+							android:layout_weight="1" />
+						<Button android:id="@+projectlist/validadd"
+							android:layout_height="0dp" android:layout_width="fill_parent"
+							android:layout_weight="1" android:text="@string/valid" />
+					</LinearLayout>
+				</LinearLayout>
+				
+				
+			</LinearLayout>
+			<LinearLayout android:layout_weight="3"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:orientation="vertical">
+			</LinearLayout>
+			<LinearLayout android:layout_weight="2"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:orientation="vertical">
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

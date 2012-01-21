@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+idmenu/add_folder" android:icon="@drawable/add_new_project"
+		android:title="@string/add_folder"
+		android:showAsAction="ifRoom" />
+
+	<item android:id="@+idmenu/prefs" android:icon="@drawable/icon"
+		android:title="@string/prefs" />
+</menu>

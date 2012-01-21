@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	android:background="@drawable/login_down">
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<TextView android:text="@string/login" android:layout_height="fill_parent"
+			android:layout_width="0dp" android:layout_weight="1"
+			android:gravity="center_vertical" />
+		<EditText android:id="@+loginnew/username"
+			android:layout_height="wrap_content" android:layout_width="0dp"
+			android:layout_weight="1" android:nextFocusRight="@+loginnew/password"
+			android:nextFocusDown="@+loginnew/password" android:nextFocusForward="@+loginnew/password" />
+	</LinearLayout>
+
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<TextView android:text="@string/password" android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="1" android:gravity="center_vertical" />
+		<EditText android:id="@+loginnew/password"
+			android:layout_height="wrap_content" android:layout_width="0dp"
+			android:layout_weight="1" android:inputType="textPassword"
+			android:nextFocusLeft="@+loginnew/username" android:nextFocusUp="@+loginnew/username"
+			android:nextFocusRight="@+loginnew/valid" android:nextFocusDown="@+loginnew/valid"
+			android:nextFocusForward="@+loginnew/valid" />
+	</LinearLayout>
+
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<TextView android:text=" " android:layout_height="fill_parent"
+			android:layout_width="0dp" android:layout_weight="1"
+			android:gravity="center_vertical" />
+		<Button android:id="@+loginnew/valid" android:layout_height="wrap_content"
+			android:layout_width="0dp" android:layout_weight="1"
+			android:text="Valider" android:nextFocusLeft="@+loginnew/password"
+			android:nextFocusUp="@+loginnew/password" />
+	</LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="Préférences">
+	
+	<PreferenceCategory
+        android:title="@string/categoryserver"
+        android:key="first_category">
+	
+	<EditTextPreference android:key="server"
+		android:title="@string/iptitle"
+		android:dialogTitle="@string/iptitle"
+		android:summary="@string/ipsummary"
+		android:dialogMessage="@string/ipsummary"
+		android:dialogIcon="@drawable/icon"
+		android:defaultValue="94.125.160.65" />
+
+	<EditTextPreference android:key="fileaccess"
+		android:title="@string/fileaccesstitle"
+		android:dialogTitle="@string/fileaccesstitle"
+		android:summary="@string/fileaccesssummary"
+		android:dialogMessage="@string/fileaccesssummary"
+		android:dialogIcon="@drawable/icon"
+		android:defaultValue="/index.php" />
+	<CheckBoxPreference
+		android:title="@string/protocoltitle"
+		android:defaultValue="false"
+		android:summary="@string/protocolsummary"
+		android:key="protocol" />
+	<EditTextPreference
+		android:key="port"
+		android:title="@string/porttitle"
+		android:dialogTitle="@string/porttitle"
+		android:summary="@string/portsummary"
+		android:dialogMessage="@string/portsummary"
+		android:dialogIcon="@drawable/icon"
+		android:defaultValue="80" />
+		</PreferenceCategory>
+</PreferenceScreen>
