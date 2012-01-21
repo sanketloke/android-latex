@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:orientation="horizontal" android:cacheColorHint="#00000000"
+	android:paddingBottom="10dp">
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_gravity="top" android:layout_weight="1">
+		<TextView android:id="@+list_project/name" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textSize="25px"
+			android:textStyle="bold"/>
+		<!-- partie inferieure -->
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:orientation="horizontal"
+			android:gravity="right|center_vertical">
+			<ImageView 
+				android:id="@+list/rename"
+				android:src="@drawable/rename"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView 
+				android:id="@+list/remove"
+				android:src="@drawable/remove"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

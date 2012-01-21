@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Androtex</string>
+    <string name="prefs">Paramètres</string>
+    <string name="categoryserver">Paramètres serveur</string>
+    
+    <string name="add_file">Nouveau fichier</string>
+    <string name="add_folder">Nouveau dossier</string>
+    <string name="add_existing_file">Ajout fichier existant</string>
+    <string name="waiting">Veuillez patienter...</string>
+    <string name="filename">Nom du fichier</string>
+    <string name="filename_description">Nom du fichier (a-zA-Z0-9._)</string>
+    <string name="newfilename_description">Nouveau nom du fichier (a-zA-Z0-9._)</string>
+    <string name="filedelete">Effacer un fichier</string>
+    <string name="filedelete_message">Etes-vous sur d\'effacer ce fichier ?</string>
+    <string name="projectdelete">Effacer un project</string>
+    <string name="projectdelete_message">Etes-vous sur d\'effacer ce projet ? (+ fichiers)</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="createfilesuccess">Création du fichier effectuée avec succès</string>
+    <string name="createfilefailure">Echec de la creation du fichier</string>
+    <string name="filelistfailure">Echec de la liste des fichiers</string>
+    <string name="failed">Echec</string>
+    <string name="cantread">Echec : ne peut pas lire</string>
+    <string name="cantload">Echec : ne peut pas charger</string>
+    <string name="cantmaj">Echec : mise à jour</string>
+    <string name="fileupdated">Le fichier {NAME} de {PROJECT} a été mis à jour</string>
+    <string name="pdfnopdf">Pas d\'application disponible pour lire les PDF</string>
+    <string name="pdferror">Une erreur est apparue</string>
+    <string name="pdfcompilationerror">PDF : Echec de la compilation</string>
+    <string name="projectlistfailure">Erreur de la liste des projets</string>
+    <string name="projectcreatefailure">Erreur de la creation du projet</string>
+    <string name="server">version serveur</string>
+    <string name="compileb64">Erreur sur Base64 ou UTF8</string>
+    <string name="compilejson">Erreur JSON</string>
+    <string name="createfilefailureexiste">Le fichier existe déjà?</string>
+    <string name="createprojectfailureexiste">Le fichier existe déjà?</string>
+    <string name="errorencoding"></string>
+    <string name="wronglogin">Mauvais password ou login</string>
+    <string name="loginexist">pas de retour de login ou mot de passe, le login doit exister.</string>
+    <string name="projectrenameerror">Erreur lors du renommage du projet</string>
+    <string name="projectdeleteerror">Erreur lors de la supression du projet</string>
+    <string name="projectrenamesuccess">Projet renomme avec succes</string>
+    <string name="projectdeletesuccess">Projet efface avec succes</string>
+    <string name="filerenameerror">Erreur lors du renommage du fichier</string>
+    <string name="filedeleteerror">Erreur lors de la supression du fichier</string>
+    <string name="filerenamesuccess">Fichier renomme avec succes</string>
+    <string name="filedeletesuccess">Fichier efface avec succes</string>
+    <string name="patternwrong">Nom incorrect. doit suivre a-zA-Z0-9 avec . ou _ sans ..</string>
+    
+    <string name="filelist">Liste des fichiers</string>
+    <string name="addfile">Ajouter fichier</string>
+    <string name="addlatex">Creer LaTeX</string>
+    <string name="visualisation">Visualisation</string>
+    <string name="save">Enregistrer</string>
+    <string name="compile">Compiler</string>
+    <string name="connection">Connexion</string>
+    <string name="login">Login</string>
+    <string name="password">Mot de passe</string>
+    <string name="createaccount">Créer un compte</string>
+    <string name="projectlist">Liste de vos Projets</string>
+    <string name="projectcreate">Créer un nouveau projet</string>
+    <string name="projectname">Nom du projet</string>
+    <string name="valid">Valider</string>
+    
+    <string name="fileaccesstitle">Page d\'accès de l\'api</string>
+    <string name="fileaccesssummary">Emplacement sur le serveur pour accèder à l\'api</string>
+    <string name="protocoltitle">Utilisation de protocole sécurisé</string>
+    <string name="protocolsummary">Cocher pour utiliser https</string>
+    <string name="iptitle">Url du serveur</string>
+    <string name="ipsummary">IP ou hote.domaine du serveur</string>
+    <string name="porttitle">Port d\'accès</string>
+    <string name="portsummary">Numéro de port d\'accès au serveur</string>
+    
+    <string name="addbugexplain">Le support de chargement depuis la gallerie n\'est pas encore terminé. Veuillez utiliser un explorateur comme Root Explorer</string>
+</resources>

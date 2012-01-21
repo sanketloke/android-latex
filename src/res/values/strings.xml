@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Androtex</string>
+	<string name="prefs">Parameters</string>
+	<string name="categoryserver">Server parameters</string>
+
+	<string name="add_file">New File</string>
+	<string name="add_folder">New Project</string>
+	<string name="add_existing_file">Add an existing file</string>
+	<string name="waiting">Please wait...</string>
+	<string name="filename">Filename</string>
+	<string name="filedelete">Delete a file</string>
+	<string name="filedelete_message">Are you sure you want to delete the file?</string>
+    <string name="projectdelete">Delete a project</string>
+    <string name="projectdelete_message">Are you sure to delete this project ? (+ files)</string>
+	<string name="filename_description">Filename (a-zA-Z0-9._)</string>
+    <string name="newfilename_description">New Filename (a-zA-Z0-9._)</string>
+	<string name="ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="createfilesuccess">File successfully created</string>
+	<string name="createfilefailure">File creation failed</string>
+	<string name="filelistfailure">Failed to fetch file list</string>
+	<string name="failed">Failed</string>
+	<string name="cantread">Failed : can not read</string>
+	<string name="cantload">Failed : can not load</string>
+	<string name="cantmaj">Failed : update</string>
+	<string name="fileupdated">The file {NAME} from {PROJECT} has been updated
+	</string>
+	<string name="pdfnopdf">No available application to read PDF</string>
+	<string name="pdferror">An error occured</string>
+	<string name="pdfcompilationerror">PDF : Failed to compile</string>
+	<string name="projectlistfailure">Project list failed</string>
+	<string name="projectcreatefailure">Failed to create a new project</string>
+	<string name="server">server version</string>
+	<string name="compileb64">Error on Base64 or UTF8</string>
+	<string name="compilejson">JSON Error</string>
+	<string name="createfilefailureexiste">The file already exists?</string>
+	<string name="createprojectfailureexiste">The project already exists?</string>
+	<string name="errorencoding"></string>
+	<string name="wronglogin">Wrong password or login</string>
+	<string name="loginexist">The login already exist</string>
+	<string name="projectrenameerror">Error while renaming the project</string>
+	<string name="projectdeleteerror">Error while deleting the project</string>
+	<string name="projectrenamesuccess">Project successfully renamed</string>
+	<string name="projectdeletesuccess">Project successfully deleted</string>
+	<string name="filerenameerror">Error while renaming the file</string>
+	<string name="filedeleteerror">Error while deleting the file</string>
+	<string name="filerenamesuccess">File successfully renamed</string>
+	<string name="filedeletesuccess">File successfully deleted</string>
+	<string name="patternwrong">Name incorrect. must follow only a-zA-Z0-9 with .
+		or _ without ..</string>
+
+	<string name="filelist">Files list</string>
+	<string name="addfile">Add a file</string>
+	<string name="addlatex">Generate LaTeX</string>
+	<string name="visualisation">Visualization</string>
+	<string name="save">Save</string>
+	<string name="compile">Generate</string>
+	<string name="connection">Connection</string>
+	<string name="login">Username</string>
+	<string name="password">Password</string>
+	<string name="createaccount">Create an account</string>
+	<string name="projectlist">Your projects</string>
+	<string name="projectcreate">Create a new project</string>
+	<string name="projectname">Project name</string>
+	<string name="valid">Valid</string>
+
+    <string name="fileaccesstitle">API Page access</string>
+    <string name="fileaccesssummary">API Location on the specified server</string>
+	<string name="protocoltitle">Use a secured connection</string>
+	<string name="protocolsummary">Check to use https if server support it</string>
+	<string name="iptitle">Server URL</string>
+	<string name="ipsummary">Server\'s IP or host.domainname</string>
+	<string name="porttitle">Access port</string>
+	<string name="portsummary">Port\'s # to access API</string>
+
+	<string name="addbugexplain">The Gallery is not (at the moment) compatible with
+		the application. Please use a file explorer like Root Explorer for
+		instance. This will be soon fixed</string>
+</resources>
