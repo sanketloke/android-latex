@@ -9,12 +9,12 @@
 			android:layout_height="wrap_content" android:orientation="horizontal"
 			android:gravity="right">
 			<Button android:text="@string/save" android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:textSize="15dp"
+				android:layout_width="wrap_content" android:textSize="9dp"
 				android:layout_gravity="right" android:id="@+filelist/save"
 				android:visibility="gone" />
 			<Button android:text="@string/compile" android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:textSize="15dp"
-				android:layout_gravity="right" android:id="@+filelist/compile"
+				android:layout_width="wrap_content" android:textSize="9dp"
+				android:layout_gravity="right"  android:id="@+filelist/compile"
 				android:visibility="gone" />
 		</LinearLayout>
 	</LinearLayout>
@@ -24,6 +24,7 @@
 
 		<EditText android:id="@+filelist/text" android:layout_width="fill_parent"
 			android:layout_height="fill_parent" android:gravity="top|left"
+			android:scrollbars="vertical|horizontal"
 			android:visibility="gone" />
 
 

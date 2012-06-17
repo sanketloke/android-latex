@@ -3,7 +3,13 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:focusable="true"
 	android:focusableInTouchMode="true">
-	<com.viewpagerindicator.TitlePageIndicator
+    <com.inmobi.androidsdk.IMAdView
+        android:id="@+principal/adview"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        adSlot="15"
+        appId="4028cb1334ef46a90134ffb035ec01f9" />
+	<com.androtex.viewpagerindicator.TitlePageIndicator
 		android:id="@+id/indicator" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
 		android:background="#FF444444" />

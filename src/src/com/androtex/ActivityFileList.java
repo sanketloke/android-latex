@@ -51,7 +51,8 @@ import com.androtex.http.LoadManagement;
 import com.androtex.pager.FilePagerAdapter;
 import com.androtex.pager.ProjectPagerAdapter;
 import com.androtex.user.MessagingService;
-import com.viewpagerindicator.TitlePageIndicator;
+import com.androtex.util.ExtensionManager;
+import com.androtex.viewpagerindicator.TitlePageIndicator;
 
 public class ActivityFileList extends FragmentActivity implements IGetFileList,
 ICreateFile, IGetFile, IUpdateFile, ICompileFile, IRenameFile,
@@ -66,7 +67,7 @@ IDeleteFile {
 	private Button _add;
 	private Button _create;
 	private ImageView _zone_image;
-	private TextFormat _editeur;
+	//private TextFormat _editeur;
 	private FileArray _file_array;
 
 	private static LoadManagement _user_action;
@@ -146,7 +147,7 @@ IDeleteFile {
 			if(pager != null){
 				FilePagerAdapter adapter = new FilePagerAdapter( this );
 				TitlePageIndicator indicator =
-					(TitlePageIndicator)findViewById( R.id.indicator );
+						(TitlePageIndicator)findViewById( R.id.indicator );
 				pager.setAdapter(adapter);
 				indicator.setViewPager(pager);
 			}else{
@@ -201,11 +202,11 @@ IDeleteFile {
 		if(_zone_texte_save != null)
 			_zone_texte.setText(_zone_texte_save);
 		_zone_texte_save = null;
-
+		Log.d("zone texte save", "texte "+_zone_texte_save);
 		_zone_image = image;
 		_save = save;
 		_compile = compile;
-		_editeur = new TextFormat(_zone_texte);
+		//_editeur = new TextFormat(_zone_texte);
 
 		_save.setOnClickListener(new OnClickListener() {
 
@@ -222,7 +223,9 @@ IDeleteFile {
 							_project, _file_in_edition, update);
 					_user_action.compute();
 					createActionProgress();
-				}
+				}//else{
+				//	MessagingService.getInstance().makeMessage(ActivityFileList.this, echec,Toast.LENGTH_LONG);
+				//}
 			}
 
 		});
@@ -247,7 +250,7 @@ IDeleteFile {
 
 		});
 
-		_zone_texte.addTextChangedListener(_editeur);
+		//_zone_texte.addTextChangedListener(_editeur);
 	}
 
 	public void setActivityFileComponents(ListView list){
@@ -320,6 +323,7 @@ IDeleteFile {
 
 	@Override
 	public void onRestoreInstanceState(Bundle restore) {
+		super.onRestoreInstanceState(restore);
 		if (restore.containsKey("version"))
 			_tune_action_bar.refreshServerVersion(restore.getString("version"));
 
@@ -345,10 +349,9 @@ IDeleteFile {
 
 		if (_file_in_edition != null) {
 			String ext = _file_in_edition
-			.substring(_file_in_edition.length() - 3);
+					.substring(_file_in_edition.length() - 3);
 
-			if ("png".equals(ext) || "gif".equals(ext) || "jpeg".equals(ext)
-					|| "jpg".equals(ext)) {
+			if (ExtensionManager.isImage(ext)) {
 				_zone_image.setImageBitmap(BitmapFactory.decodeByteArray(
 						_image_data, 0, _image_data.length));
 				changeVisibility(false, true);
@@ -360,6 +363,7 @@ IDeleteFile {
 
 	@Override
 	public void onSaveInstanceState(Bundle save) {
+		super.onSaveInstanceState(save);
 		save.putString("login", _login);
 		save.putString("password", _password);
 		save.putString("project", _project);
@@ -601,7 +605,7 @@ IDeleteFile {
 		}
 
 		String echec = ActivityFileList.this
-		.getText(R.string.createfilefailure).toString() + "\n" + text;
+				.getText(R.string.createfilefailure).toString() + "\n" + text;
 
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
@@ -642,7 +646,7 @@ IDeleteFile {
 		}
 
 		String echec = ActivityFileList.this.getText(R.string.filelistfailure)
-		.toString() + "\n" + text;
+				.toString() + "\n" + text;
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
 	}
@@ -655,7 +659,14 @@ IDeleteFile {
 	}
 
 	public void readFromFile(String path) throws Exception {
-		path = path.replace("content://", "").replace("file://", "").replace("/mnt", "");
+		if(path.startsWith("content://"))
+			path = path.replace("content://", "");
+		if(path.startsWith("file://"))
+			path = path.replace("file://", "");//.replace("/mnt", "");
+		if(path.startsWith("org.openintents.filemanager/"))
+			path = path.replaceFirst("org.openintents.filemanager/", "");
+		if(path.startsWith("com.ghostsq.commander.FileProvider/"))
+			path = path.replaceFirst("com.ghostsq.commander.FileProvider/", "");
 		path = URLDecoder.decode(path,"UTF-8");
 
 		String[] _path = path.split("/");
@@ -684,8 +695,7 @@ IDeleteFile {
 			//we extract the extension
 			final String ext = filename.substring(filename.length() - 3);
 
-			if ("png".equals(ext) || "gif".equals(ext) || "jpeg".equals(ext)
-					|| "jpg".equals(ext) || "tex".equals(ext)) {
+			if (ExtensionManager.isExtensionValid(ext)) {
 				final String __path = path;
 
 				//the filename without extension
@@ -866,7 +876,7 @@ IDeleteFile {
 		}
 
 		String echec = ActivityFileList.this.getText(R.string.cantload)
-		.toString() + "\n" + text;
+				.toString() + "\n" + text;
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
 	}
@@ -882,7 +892,7 @@ IDeleteFile {
 		}
 
 		String res = ActivityFileList.this.getText(R.string.fileupdated)
-		.toString();
+				.toString();
 		res = res.replace("{NAME}", file);
 		res = res.replace("{PROJECT}", project);
 		MessagingService.getInstance().makeMessage(ActivityFileList.this, res,
@@ -900,7 +910,7 @@ IDeleteFile {
 			_user_action = null;
 		}
 		String echec = ActivityFileList.this.getText(R.string.cantmaj)
-		.toString() + "\n" + text;
+				.toString() + "\n" + text;
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
 	}
@@ -978,7 +988,7 @@ IDeleteFile {
 		}
 
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
-				getString(R.string.pdferror), MessagingService.MESSAGE_LONG);
+				getString(R.string.pdferror)+((log != null)?"\n\n"+log:""), MessagingService.MESSAGE_LONG);
 	}
 
 	@Override
@@ -1024,7 +1034,7 @@ IDeleteFile {
 		}
 
 		String echec = ActivityFileList.this.getText(R.string.filerenameerror)
-		.toString();
+				.toString();
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
 	}
@@ -1073,7 +1083,7 @@ IDeleteFile {
 		}
 
 		String echec = ActivityFileList.this.getText(R.string.filedeleteerror)
-		.toString();
+				.toString();
 		MessagingService.getInstance().makeMessage(ActivityFileList.this,
 				echec, MessagingService.MESSAGE_LONG);
 	}
@@ -1091,19 +1101,27 @@ IDeleteFile {
 		}
 
 		if(show_text){
-			_zone_texte.setVisibility(View.VISIBLE);
-			_save.setVisibility(View.VISIBLE);
-			_compile.setVisibility(View.VISIBLE);
+			if(_zone_texte != null)
+				_zone_texte.setVisibility(View.VISIBLE);
+			if(_save != null)
+				_save.setVisibility(View.VISIBLE);
+			if(_compile != null)
+				_compile.setVisibility(View.VISIBLE);
 		}else{
-			_zone_texte.setVisibility(View.GONE);
-			_save.setVisibility(View.GONE);
-			_compile.setVisibility(View.GONE);
+			if(_zone_texte != null)
+				_zone_texte.setVisibility(View.GONE);
+			if(_save != null)
+				_save.setVisibility(View.GONE);
+			if(_compile != null)
+				_compile.setVisibility(View.GONE);
 		}
 
 		if(show_img){
-			_zone_image.setVisibility(View.VISIBLE);
+			if(_zone_image != null)
+				_zone_image.setVisibility(View.VISIBLE);
 		}else{
-			_zone_image.setVisibility(View.GONE);
+			if(_zone_image != null)
+				_zone_image.setVisibility(View.GONE);
 		}
 	}
 }

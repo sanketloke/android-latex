@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.androtex" android:versionCode="5"
-	android:versionName="1.2.4">
+	package="com.androtex" android:versionCode="7"
+	android:versionName="1.2.6" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="4"
 		android:targetSdkVersion="13" />
 	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
 	<application android:icon="@drawable/icon" android:logo="@drawable/logo" android:hardwareAccelerated="true"
-		android:debuggable="true" android:label="@string/app_name">
+		android:debuggable="false" android:label="@string/app_name">
 		<activity android:name=".ActivityMain"
 			android:theme="@style/Theme.Sherlock.Light" android:windowNoTitle="true">
 			<intent-filter>

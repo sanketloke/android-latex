@@ -22,8 +22,8 @@ public class TuneActionBar {
 		_action_bar = null;
 		try{
 			_action_bar =  _activity.getSupportActionBar();
-			if(OK)
-				_action_bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+			//if(OK)
+			//	_action_bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 			_action_bar.setDisplayShowTitleEnabled(false);
 
 		}catch(Exception e){
@@ -34,17 +34,17 @@ public class TuneActionBar {
 	}
 
 	public void attachServerVersion(){
-		if(OK && _action_bar != null)
-			_action_bar.addTab(_server_version,0);
+		//if(OK && _action_bar != null)
+		//	_action_bar.addTab(_server_version,0);
 	}
 
 	public void createServerVersion(){
-		if(OK && _action_bar != null){
-			_server_version = _action_bar.newTab();
-			_server_version.setIcon(R.drawable.server_version);
-			_server_version.setText(_server_text);
-			_server_version.setTabListener(new TabListenerVoid(null));
-		}
+		//if(OK && _action_bar != null){
+			//_server_version = _action_bar.newTab();
+			//_server_version.setIcon(R.drawable.server_version);
+			//_server_version.setText(_server_text);
+			//_server_version.setTabListener(new TabListenerVoid(null));
+		//}
 	}
 
 	public final String getVersion(){
@@ -52,17 +52,17 @@ public class TuneActionBar {
 	}
 
 	public void refreshServerVersion(final String version){
-		if(OK && _action_bar != null){
-			if(version != null){
-				_activity.runOnUiThread(new Thread(){
-					public void run(){
+		//if(OK && _action_bar != null){
+			//if(version != null){
+				//_activity.runOnUiThread(new Thread(){
+					//public void run(){
 						_server_text = version;
-						_server_version.setText(_server_text);
-						_action_bar.removeTab(_server_version);
-						attachServerVersion();				
-					}
-				});
-			}
-		}
+						//_server_version.setText(_server_text);
+						//_action_bar.removeTab(_server_version);
+						//attachServerVersion();				
+					//}
+				//});
+			//}
+		//}
 	}
 }
