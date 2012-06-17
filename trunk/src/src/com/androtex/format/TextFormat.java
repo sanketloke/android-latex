@@ -68,7 +68,7 @@ public class TextFormat implements TextWatcher {
 		int st = _text.getSelectionStart();
 		int debut = st;
 		int fin = st;
-		for(;debut >= 0 && text.charAt(debut) != '\n';debut--);
+		for(;debut >= 0 && debut<text.length() && text.charAt(debut) != '\n';debut--);
 		for(;fin<_text.length()-1 && text.charAt(fin) != '\n';fin++);
 		//bug fix
 		//TODO fix it without this fin=text.length()-1

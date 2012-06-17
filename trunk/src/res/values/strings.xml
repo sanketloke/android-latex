@@ -3,7 +3,7 @@
 	<string name="app_name">Androtex</string>
 	<string name="prefs">Parameters</string>
 	<string name="categoryserver">Server parameters</string>
-
+	<string name="reportmail">Report error to mail</string>
 	<string name="add_file">New File</string>
 	<string name="add_folder">New Project</string>
 	<string name="add_existing_file">Add an existing file</string>
@@ -72,9 +72,12 @@
 	<string name="iptitle">Server URL</string>
 	<string name="ipsummary">Server\'s IP or host.domainname</string>
 	<string name="porttitle">Access port</string>
-	<string name="portsummary">Port\'s # to access API</string>
+	<string name="portsummary">Port\'s # to access API. ex : 80 or 8080</string>
 
 	<string name="addbugexplain">The Gallery is not (at the moment) compatible with
 		the application. Please use a file explorer like Root Explorer for
 		instance. This will be soon fixed</string>
+	
+	<string name="pref_default">Default</string>
+	<string name="pref_default_summary">Configure to use 94.125.160.65:8080/index.php</string>
 </resources>

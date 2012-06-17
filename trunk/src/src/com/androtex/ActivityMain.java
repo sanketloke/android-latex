@@ -22,7 +22,7 @@ import com.androtex.login.interfaces.ICreateLogin;
 import com.androtex.login.interfaces.ILogin;
 import com.androtex.pager.ConnectPagerAdapter;
 import com.androtex.user.MessagingService;
-import com.viewpagerindicator.TitlePageIndicator;
+import com.androtex.viewpagerindicator.TitlePageIndicator;
 
 public class ActivityMain extends FragmentActivity implements ILogin, ICreateLogin {
 	private EditText _login_login;

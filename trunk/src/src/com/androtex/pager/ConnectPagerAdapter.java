@@ -6,7 +6,7 @@ import com.androtex.format.Valid;
 import com.androtex.login.CreateLogin;
 import com.androtex.login.Login;
 import com.androtex.user.MessagingService;
-import com.viewpagerindicator.TitleProvider;
+import com.androtex.viewpagerindicator.TitleProvider;
 
 import android.content.Context;
 import android.os.Parcelable;

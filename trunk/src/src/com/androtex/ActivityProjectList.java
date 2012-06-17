@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.Menu;
 import android.support.v4.view.MenuItem;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -31,7 +32,7 @@ import com.androtex.projects.interfaces.IDeleteProject;
 import com.androtex.projects.interfaces.IProjectList;
 import com.androtex.projects.interfaces.IRenameProject;
 import com.androtex.user.MessagingService;
-import com.viewpagerindicator.TitlePageIndicator;
+import com.androtex.viewpagerindicator.TitlePageIndicator;
 
 public class ActivityProjectList extends FragmentActivity implements IProjectList,
 ICreateProject, IRenameProject, IDeleteProject {
@@ -331,11 +332,6 @@ ICreateProject, IRenameProject, IDeleteProject {
 			final String version) {
 		_tune_action_bar.refreshServerVersion(version);
 
-		if (_project_action != null) {
-			stopProjectProgress();
-			_project_action = null;
-		}
-
 		_project_array = new ProjectArray(projects);
 		this.runOnUiThread(new Thread() {
 			public void run() {
@@ -344,6 +340,11 @@ ICreateProject, IRenameProject, IDeleteProject {
 				_liste.setAdapter(_adapter);
 			}
 		});
+
+		if (_project_action != null) {
+			stopProjectProgress();
+			_project_action = null;
+		}
 	}
 
 	@Override

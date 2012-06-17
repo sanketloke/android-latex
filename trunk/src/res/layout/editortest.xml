@@ -3,7 +3,7 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:focusable="true"
 	android:focusableInTouchMode="true">
-	<com.viewpagerindicator.TitlePageIndicator
+	<com.androtex.viewpagerindicator.TitlePageIndicator
 		android:id="@+id/indicator" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
 		android:background="#FF444444" />

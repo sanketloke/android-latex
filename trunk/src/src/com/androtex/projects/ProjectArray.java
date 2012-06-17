@@ -1,5 +1,7 @@
 package com.androtex.projects;
 
+import android.util.Log;
+
 /**
  * ProjectArray
  * 
@@ -21,12 +23,13 @@ public class ProjectArray {
 	 *            the project listing
 	 */
 	public ProjectArray(String[] projects) {
-		if (projects != null && projects.length != 0) {
+		//if (projects != null && projects.length != 0) {
 			_projects = new Project[projects.length];
 			for (int i = 0; i < projects.length; _projects[i] = new Project(
 					projects[i]), i++)
 				;
-		}
+			Log.d("project list",projects.length+" ");
+		//}
 	}
 
 	/**

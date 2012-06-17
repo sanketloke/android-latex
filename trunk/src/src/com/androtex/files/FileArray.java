@@ -1,5 +1,7 @@
 package com.androtex.files;
 
+import android.util.Log;
+
 public class FileArray {
 	private File[] _filenames;
 	private String _project;
@@ -10,6 +12,7 @@ public class FileArray {
 		for (int i = 0; i < _filenames.length; _filenames[i] = new File(
 				filenames[i]), i++)
 			;
+		Log.d("INFORMATIONS","OKKKKKKKKKK");
 	}
 
 	public File get(int i) {

@@ -7,6 +7,7 @@ import com.androtex.http.ActionURLS;
 import com.androtex.http.LoadManagement;
 import com.androtex.http.LoadURL;
 import com.androtex.http.interfaces.IURLLoaded;
+import com.androtex.util.ExtensionManager;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -86,14 +87,15 @@ public class GetFile extends LoadManagement implements IURLLoaded {
 		// _parent.onFileFailure("wrong password or login? missing file?...");
 
 		byte[] res = Base64.decode(text, 0);
-		if ("tex".equals(_file.substring(_file.length() - 3))) {
+		String ext = _file.substring(_file.length() - 3);
+		if (ExtensionManager.isTex(ext)) {
 			try {
 				_parent.onTexFileSuccess(_file, new String(res, "UTF8"));
 			} catch (UnsupportedEncodingException e) {
 				_parent.onFileFailure(_context.getString(R.string.errorencoding));
 				e.printStackTrace();
 			}
-		} else {
+		} else if(ExtensionManager.isImage(ext)){
 			_parent.onImageFileSuccess(_file, res);
 		}
 

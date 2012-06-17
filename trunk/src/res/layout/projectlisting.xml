@@ -10,14 +10,14 @@
         android:id="@+projectlist/list"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0" >
+        android:layout_weight="1" >
     </ListView>
 
-    <com.inmobi.androidsdk.IMAdView
+    <!-- <com.inmobi.androidsdk.IMAdView
         android:id="@+principal/adview"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         adSlot="15"
-        appId="4028cb1334ef46a90134ffb035ec01f9" />
+        appId="4028cb1334ef46a90134ffb035ec01f9" /> -->
 
 </LinearLayout>
